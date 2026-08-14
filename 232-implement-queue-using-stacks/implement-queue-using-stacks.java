@@ -8,30 +8,39 @@ class MyQueue {
     }
     
     public void push(int x) {
-        st.push(x);  
-    }
-    
-    public int pop() {
-        while(st.size()!=1){
+        while(st.size()!=0){
             st2.push(st.pop());
         }
-       int x =  st.pop();
+        st.push(x);
         while(st2.size()!=0){
             st.push(st2.pop());
         }
-        return x;
+       
+    }
+    
+    public int pop() { //O(n) 
+    //     while(st.size()!=1){
+    //         st2.push(st.pop());
+    //     }
+    //    int x =  st.pop();
+    //     while(st2.size()!=0){
+    //         st.push(st2.pop());
+    //     }
+    //     return x;
+    return st.pop();
         
     }
     
-    public int peek() {
-         while(st.size()!=1){
-            st2.push(st.pop());
-        }
-       int x =  st.peek();
-        while(st2.size()!=0){
-            st.push(st2.pop());
-        }
-        return x;
+    public int peek() { //O(n)
+    //      while(st.size()!=1){
+    //         st2.push(st.pop());
+    //     }
+    //    int x =  st.peek();
+    //     while(st2.size()!=0){
+    //         st.push(st2.pop());
+    //     }
+    //     return x;
+    return st.peek();
         
     }
     
