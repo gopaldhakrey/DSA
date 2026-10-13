@@ -19,13 +19,7 @@ class Solution {
 
             }
         }
-        while(st.size()!=0){
-            st.pop();
-            count++;
-        }
-       
-       
-        return count;
+       return count+st.size();  // st.size() how many opening bracts are still there
         
 
         
